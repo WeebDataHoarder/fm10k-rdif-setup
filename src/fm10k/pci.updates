@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: GPL-2.0
+# Copyright(c) 2013 - 2019 Intel Corporation.
+
+# updates for the system pci.ids file
+#
+# IMPORTANT!  Entries in this list must be sorted as they
+#             would appear in the system pci.ids file.  Entries
+#             are sorted by ven, dev, subven, subdev
+#             (numerical order).
+#
+8086  Intel Corporation
+	15a4  Ethernet Switch FM10000 Host Interface
+	15a5  Ethernet Switch FM10000 Host Virtual Interface
+	15d0  Ethernet SDI Adapter
+		8086 0001  Ethernet SDI Adapter FM10420-100GbE-QDA2
+		8086 0002  Ethernet SDI Adapter FM10840-MTP2
+	15d5  Ethernet SDI Adapter FM10420-25GbE-DA2
