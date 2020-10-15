@@ -34,3 +34,11 @@ modprobe uio
 #Reload FM10K kernel module
 rmmod fm10k
 modprobe fm10k
+
+popd
+
+if [ ! -d /etc/rdi ]; then
+  mkdir /etc/rdi
+  cp -v platform/default/fm_platform_attributes.cfg /etc/rdi/fm_platform_attributes.cfg
+fi
+
