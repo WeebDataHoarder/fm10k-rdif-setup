@@ -1,6 +1,11 @@
 .rdif_fetched_url
 *.o.cmd
+*.ko.cmd
+*.mod.cmd
 *.o
 fm10k.7.gz
+fm10k.mod
+fm10k.mod.c
 modules.order
+Module.symvers
 src/rdif/
