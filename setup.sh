@@ -19,7 +19,7 @@ popd
 
 if [ ! -d rdif ] || [ "${RDIF_URL}" != "$(cat rdif/.rdif_fetched_url 2>/dev/null)" ]; then
   rm -rf "rdif"
-  wget "${RDIF_URL}"  -O - | tar zxf -
+  wget -4 "${RDIF_URL}"  -O - | tar zxf -
   mv "rdif-"* "rdif"
   echo "${RDIF_URL}" > rdif/.rdif_fetched_url
   touch rdif/.keep
