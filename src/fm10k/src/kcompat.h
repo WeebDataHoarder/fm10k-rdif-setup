@@ -257,8 +257,10 @@ struct msix_entry {
 #define node_online(node) ((node) == 0)
 #endif
 
+#if ( LINUX_VERSION_CODE < KERNEL_VERSION(5,4,0) )
 #ifndef num_online_cpus
 #define num_online_cpus() smp_num_cpus
+#endif
 #endif
 
 #ifndef cpu_online
@@ -2111,7 +2113,11 @@ void _kc_pci_disable_link_state(struct pci_dev *dev, int state);
 #define pci_disable_link_state(p, s) _kc_pci_disable_link_state(p, s)
 #else /* < 2.6.26 */
 #define NETDEV_CAN_SET_GSO_MAX_SIZE
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5,4,0)
 #include <linux/pci-aspm.h>
+#else
+#include <linux/pci.h>
+#endif
 #define HAVE_NETDEV_VLAN_FEATURES
 #ifndef PCI_EXP_LNKCAP_ASPMS
 #define PCI_EXP_LNKCAP_ASPMS 0x00000c00 /* ASPM Support */
