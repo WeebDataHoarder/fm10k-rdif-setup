@@ -11,7 +11,7 @@ pushd "${SCRIPT_DIR}"
 
 pushd src
 
-pushd fm10k
+pushd fm10k/src
 make clean
 make -j $(nproc) CONFIG_UIO=1
 make install CONFIG_UIO=1
