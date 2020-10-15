@@ -30,6 +30,7 @@ pushd rdif
 ./install
 popd
 
+rdif stop
 modprobe uio
 #Reload FM10K kernel module
 rmmod fm10k
