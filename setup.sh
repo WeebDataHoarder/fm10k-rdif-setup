@@ -40,6 +40,8 @@ popd
 
 if [ ! -d /etc/rdi ]; then
   mkdir /etc/rdi
-  cp -v platform/default/fm_platform_attributes.cfg /etc/rdi/fm_platform_attributes.cfg
 fi
 
+if [ ! -f /etc/rdi/fm_platform_attributes.cfg ]; then
+  cp -v platform/default/fm_platform_attributes.cfg /etc/rdi/fm_platform_attributes.cfg
+fi
