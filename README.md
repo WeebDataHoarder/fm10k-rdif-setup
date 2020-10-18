@@ -22,6 +22,7 @@ Cards tested:
 * Use `# lshw -c network -businfo` to find the PCIe bus of the given devices.
 * Map it permanently using for example `# driverctl set-override 0000:01:00.0 fm10k` for listed device `pci@0000:01:00.0`.
 * If needed, `# rmmod fm10k` and `# modprobe fm10k` to reload the module.
+* A restart might be needed to properly load UIO
 
 ## Running rdif
 * See `src/rdif/readme.txt` once available.
