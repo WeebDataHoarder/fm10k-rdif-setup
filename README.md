@@ -19,10 +19,12 @@ Cards tested:
 ## Mapping PCIe devices to fm10k driver
 * It is always a good idea to set up IOMMU in your kernel cmdline GRUB_CMDLINE_LINUX_DEFAULT `intel_iommu=on iommu=pt`.
 * (optional) Probably you also want hugepages! DPDK and similar want them badly.
-* Use `# lshw -c network -businfo` to find the PCIe bus of the given devices.
+* Use `# lshw -c network -businfo` to find the PCIe bus of the given devices. (_Ethernet Switch FM10000 Host Interface_)
+* Two devices should appear per card. Make sure the slot they are connected to have 16x PCIe lanes and your BIOS is setup to do 8x8 PCIe bifurcation.
+* Only the main card is needed directly to be able to control the switch.
 * Map it permanently using for example `# driverctl set-override 0000:01:00.0 fm10k` for listed device `pci@0000:01:00.0`.
 * If needed, `# rmmod fm10k` and `# modprobe fm10k` to reload the module.
-* A restart might be needed to properly load UIO
+* A restart might also be needed to properly load UIO (`/dev/uio0`).
 
 ## Running rdif
 * See `src/rdif/readme.txt` once available.
